@@ -8,7 +8,9 @@
   "properties": {
     "type": {
       "type": "string",
-      "required": true
+      "required": true,
+      "refcodetype": "VoteType",
+      "default": "U"
     }
   },
   "validations": [],
