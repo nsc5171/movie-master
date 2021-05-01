@@ -34,5 +34,9 @@
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {},
+  "mixins": {
+    "SoftDeleteMixin": false,
+    "VersionMixin": false
+  }
 }
