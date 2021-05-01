@@ -1,0 +1,18 @@
+[
+    {
+        "code": "C",
+        "description": "Comedy"
+    },
+    {
+        "code": "A",
+        "description": "Action"
+    },
+    {
+        "code": "T",
+        "description": "Thriller"
+    },
+    {
+        "code": "S",
+        "description": "Sci-Fi"
+    }
+]

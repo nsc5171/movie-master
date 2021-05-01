@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins"
+    ]
+  },
+  "Movie": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Review": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Genre": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Vote": {
+    "dataSource": "db",
+    "public": true
+  },
+  "VoteType": {
+    "dataSource": "db",
+    "public": true
+  }
+}

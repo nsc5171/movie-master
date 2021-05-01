@@ -1,0 +1,52 @@
+{
+  "name": "Movie",
+  "base": "BaseEntity",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "genre": {
+      "type": "string",
+      "refcodetype": "Genre"
+    },
+    "releaseDate": "date"
+  },
+  "validations": [],
+  "relations": {
+    "reviews": {
+      "type": "hasMany",
+      "model": "Review",
+      "foreignKey": "movieId"
+    },
+    "votes": {
+      "type": "hasMany",
+      "model": "Vote",
+      "foreignKey": "movieId"
+    },
+    "genreInfo": {
+      "type": "belongsTo",
+      "model": "Genre",
+      "foreignKey": "genre",
+      "primaryKey": "code"
+    },
+    "createdBy":{
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "_createdBy",
+      "primaryKey": "username"
+    },
+    "modifiedBy":{
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "_modifiedBy",
+      "primaryKey": "username"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

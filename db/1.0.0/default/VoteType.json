@@ -1,0 +1,10 @@
+[
+    {
+        "code":"U",
+        "description":"Upvote"
+    },
+    {
+        "code":"D",
+        "description":"Downvote"
+    }
+]

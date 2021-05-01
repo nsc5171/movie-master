@@ -1,0 +1,30 @@
+{
+    "clearTables": false,
+    "contexts": {
+        "default": {
+            "id": 0,
+            "tenantId": "default",
+            "remoteUser": "defaultCtxMgrtnUser"
+        }
+    },
+    "files": [
+        {
+            "skipValidation": false,
+            "updateAttributes": false,
+            "key": "id",
+            "model": "Genre",
+            "enabled": true,
+            "file": "default/Genre.json",
+            "ctxId": "default"
+        },
+        {
+            "skipValidation": false,
+            "updateAttributes": false,
+            "key": "id",
+            "model": "VoteType",
+            "enabled": true,
+            "file": "default/VoteType.json",
+            "ctxId": "default"
+        }
+    ]
+}

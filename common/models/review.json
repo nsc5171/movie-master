@@ -1,0 +1,43 @@
+{
+  "name": "Review",
+  "base": "BaseEntity",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "movieInfo": {
+      "type": "belongsTo",
+      "model": "Movie",
+      "foreignKey": "movieId"
+    },
+    "createdBy": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "_createdBy",
+      "primaryKey": "username"
+    },
+    "modifiedBy": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "_modifiedBy",
+      "primaryKey": "username"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
