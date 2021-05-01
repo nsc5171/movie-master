@@ -1,15 +1,19 @@
 {
-  "name": "oe-cloud-2.x",
+  "name": "movie-master",
   "version": "1.0.0",
-  "description": "Oe cloud 2x application",
-  "author": "sumeet",
+  "description": "Movie Master",
+  "author": "Sai Chandra N",
   "engines": {
     "node": ">=6"
   },
   "main": "server/server.js",
   "scripts": {
     "lint": "eslint .",
-    "fix-lint": "eslint --fix ."
+    "fix-lint": "eslint --fix .",
+    "prestart": "node server/migrate.js",
+    "start": "node .",
+    "predev": "node --inspect server/migrate.js",
+    "dev": "node --inspect ."
   },
   "dependencies": {
     "@nsaichandra/oe-common-utils": "^0.0.27",

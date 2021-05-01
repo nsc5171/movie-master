@@ -1,6 +1,6 @@
 'use strict';
 process.env.NODE_ENV = process.env.NODE_ENV || 'migration';
-import app from 'oe-cloud';
+var app = require('oe-cloud');
 app.boot(__dirname, function (err) {
     if (err) { console.log(err); process.exit(1); }
 

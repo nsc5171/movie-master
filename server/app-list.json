@@ -4,6 +4,11 @@
     "enabled": true
   },
   {
+    "path": "oe-expression",
+    "autoEnableMixins": true,
+    "enabled": true
+  },
+  {
     "path": "oe-common-mixins",
     "autoEnableMixins": true,
     "enabled": true
@@ -21,6 +26,10 @@
   {
     "path": "oe-migration",
     "autoEnableMixins": true,
+    "enabled": true
+  },
+  {
+    "path": "@nsaichandra/oe-common-utils",
     "enabled": true
   },
   {
