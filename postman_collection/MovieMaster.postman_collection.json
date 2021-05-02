@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "b5f59a56-9d24-407f-9ead-60c114764f84",
+		"name": "MovieMaster",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.environment.set(\"access_token\", pm.response.json().id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"john546\",\r\n    \"email\": \"john.doe@gmail.com\",\r\n    \"password\": \"john_doe_453\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/Users",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"Users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.environment.set(\"access_token\", pm.response.json().id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"john546\",\r\n    \"email\": \"john.doe@gmail.com\",\r\n    \"password\": \"john_doe_453\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/Users/login",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"Users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setMyFavouriteGenre",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{uri}}/Users/setMyFavouriteGenre?access_token={{access_token}}&genre=T",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"Users",
+								"setMyFavouriteGenre"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}"
+								},
+								{
+									"key": "genre",
+									"value": "T"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "Add Movie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.environment.set(\"movieId\", pm.response.json().id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Wazir\",\r\n    \"genre\":\"T\",\r\n    \"description\":\"Acted by Amitabh Bachan\",\r\n    \"releaseDate\":\"2021-01-01T00:00:00+05:30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/Movies?access_token={{access_token}}",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"Movies"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch movie detail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{uri}}/Movies/{{movieId}}?access_token={{access_token}}",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"Movies",
+								"{{movieId}}"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Review for the movie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Nice to watch!\",\r\n    \"description\":\"Different concept and interesting screenplay\",\r\n    \"rating\":4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/Movies/{{movieId}}/reviews?access_token={{access_token}}",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"Movies",
+								"{{movieId}}",
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upvote the movie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.environment.set(\"voteId\", pm.response.json().id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"U\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/Movies/{{movieId}}/votes?access_token={{access_token}}",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"Movies",
+								"{{movieId}}",
+								"votes"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change to downvote",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"D\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/Movies/{{movieId}}/votes/{{voteId}}?access_token={{access_token}}",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"Movies",
+								"{{movieId}}",
+								"votes",
+								"{{voteId}}"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetchRecommendations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{uri}}/Movies/fetchRecommendations?access_token={{access_token}}",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"Movies",
+								"fetchRecommendations"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}"
+								},
+								{
+									"key": "skip",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
