@@ -10,7 +10,7 @@
       "type": "string",
       "required": true,
       "validateWhen": {
-        "required": "(@i.description || '').length>0"
+        "required": "Boolean(@i.description)"
       }
     },
     "description": {

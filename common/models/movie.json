@@ -15,6 +15,7 @@
       "refcodetype": "Genre",
       "required": true
     },
+    "description": "string",
     "releaseDate": "date"
   },
   "validations": [],
