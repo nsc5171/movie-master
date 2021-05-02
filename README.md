@@ -8,6 +8,8 @@ A movie review system.
 
 database configuration: https://github.com/nsc5171/movie-master/blob/js/server/datasources.json
 
+swagger definition: http://localhost:3000/explorer/
+
 
 ```
 npm start      //command to start application
