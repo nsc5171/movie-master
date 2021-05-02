@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+require('./pre-boot-initializer')();
 var oecloud = require('oe-cloud');
 var path = require('path');
 

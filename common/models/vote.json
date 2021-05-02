@@ -42,7 +42,14 @@
       "primaryKey": "username"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {},
   "mixins": {
     "SoftDeleteMixin": false,
