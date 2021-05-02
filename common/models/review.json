@@ -8,14 +8,29 @@
   "properties": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "validateWhen": {
+        "required": "(@i.description || '').length>0"
+      }
     },
     "description": {
       "type": "string"
     },
     "rating": {
       "type": "number",
+      "numericality": "integer",
+      "min": 1,
+      "max": 5,
       "required": true
+    },
+    "movieId": {
+      "type": "string",
+      "required": true,
+      "unique": {
+        "scopedTo": [
+          "_createdBy"
+        ]
+      }
     }
   },
   "validations": [],

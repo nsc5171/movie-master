@@ -12,7 +12,8 @@
     },
     "genre": {
       "type": "string",
-      "refcodetype": "Genre"
+      "refcodetype": "Genre",
+      "required": true
     },
     "releaseDate": "date"
   },
@@ -34,13 +35,13 @@
       "foreignKey": "genre",
       "primaryKey": "code"
     },
-    "createdBy":{
+    "createdBy": {
       "type": "belongsTo",
       "model": "User",
       "foreignKey": "_createdBy",
       "primaryKey": "username"
     },
-    "modifiedBy":{
+    "modifiedBy": {
       "type": "belongsTo",
       "model": "User",
       "foreignKey": "_modifiedBy",
